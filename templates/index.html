@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH">
+    <title>Tuya Devices</title>
+</head>
+<body>
+    <h1>Tuya Device List</h1>
+    <pre>If you wan't to use the mqtt component please fill out the definitions.txt!</pre>
+    <ul>
+        {% for device in devices %}
+        <li>
+            {% if device.obj_id in definitions %}
+                <b>{{ definitions[device.obj_id] }}</b> - <i>{{ device.obj_id }}</i>
+            {% else %}
+                <u>add this device to definitions.txt to use it in mqtt!</u> - <i>{{ device.obj_id }}</i>
+            {% endif %}
+            <button type="button" class="btn btn-outline-success"><a href="{{ url_for('turn_on', device_id=device.obj_id) }}">On</a></button>
+        <button type="button" class="btn btn-outline-danger"><a href="{{ url_for('turn_off', device_id=device.obj_id) }}">Off</a></button>
+        </li>
+        {% endfor %}
+    </ul>
+    <footer>
+        <button type="button" class="btn btn-outline-light"><a href="https://github.com/td00/tuyaweb">Fork on GitHub td00/tuyaweb</a></button>
+    </footer>
+</body>
+</html>
+

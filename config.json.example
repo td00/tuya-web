@@ -1,0 +1,11 @@
+{
+  "username": "tuyaapp@email.address",
+  "password": "password",
+  "country_code": "EU",
+  "web_endpoint": "https://tuya.local.invalid",
+  "mqtt_broker": "0.0.0.0",
+  "mqtt_port": 1883,
+  "mqtt_username": "user",
+  "mqtt_password": "pass"
+}
+

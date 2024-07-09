@@ -1,0 +1,4 @@
+tuyapy
+flask
+paho-mqtt
+requests
