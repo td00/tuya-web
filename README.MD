@@ -65,6 +65,12 @@ Create a `mqtt.yaml` in the same directory and fill like this:
 
 The mqtt will always use `tuya/<devicename>/status` & `tuya/<devicename>/set` as topics!
 
+## Known Limitations
+
+- Only on/off states are supported
+- MAYBE only devices that only have on/off states are supported (definitly not tested due to the lack of such device)
+- You need to wait 180s before respawning tuya.py (this is due to the API limitations if you don't want a dev account (WHICH I DON'T!))
+
 ## FAQ
 ### Docker
 Nope. Create a PR and I'll happily merge it :>
